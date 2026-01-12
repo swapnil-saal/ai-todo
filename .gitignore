@@ -1,1 +1,6 @@
 .swapbot/
+node_modules/
+dist/
+.env
+.DS_Store
+package-lock.json
