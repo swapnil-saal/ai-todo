@@ -1,54 +1,18 @@
-{
-  ".heroSection": {
-    "backgroundColor": "#f5f5f5",
-    "padding": "50px 20px",
-    "textAlign": "center"
-  },
-  ".heroSection h1": {
-    "fontSize": "3em",
-    "marginBottom": "20px"
-  },
-  ".heroSection p": {
-    "fontSize": "1.2em",
-    "marginBottom": "30px"
-  },
-  ".featuresSection": {
-    "backgroundColor": "#ffffff",
-    "padding": "50px 20px",
-    "display": "flex",
-    "justifyContent": "space-around"
-  },
-  ".feature": {
-    "flex": "1",
-    "margin": "0 10px",
-    "textAlign": "center"
-  },
-  ".feature h2": {
-    "fontSize": "2em",
-    "marginBottom": "10px"
-  },
-  ".feature p": {
-    "fontSize": "1em"
-  },
-  ".ctaSection": {
-    "backgroundColor": "#333333",
-    "color": "#ffffff",
-    "padding": "50px 20px",
-    "textAlign": "center"
-  },
-  ".ctaSection h2": {
-    "fontSize": "2.5em",
-    "marginBottom": "20px"
-  },
-  ".ctaSection button": {
-    "backgroundColor": "#ff6600",
-    "color": "#ffffff",
-    "border": "none",
-    "padding": "15px 30px",
-    "fontSize": "1em",
-    "cursor": "pointer"
-  },
-  ".ctaSection button:hover": {
-    "backgroundColor": "#e65c00"
-  }
+src/styles/LandingPage.module.css
+@import 'tailwindcss/tailwind.css';
+
+.landing-page {
+  @apply bg-gray-100 min-h-screen flex flex-col;
+}
+
+.hero-section {
+  @apply flex flex-col items-center justify-center bg-white py-16 px-4 sm:px-6 lg:px-8;
+}
+
+.features-section {
+  @apply bg-gray-50 py-16 px-4 sm:px-6 lg:px-8;
+}
+
+.cta-section {
+  @apply bg-blue-600 text-white py-16 px-4 sm:px-6 lg:px-8;
 }
