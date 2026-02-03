@@ -1,57 +1,53 @@
-// src/components/HeroSection.tsx
-
 import React from 'react';
-import styled from 'styled-components';
 
-const HeroSectionWrapper = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  color: #fff;
-  text-align: center;
-`;
+interface HeroSectionProps {
+  title: string;
+  subtitle: string;
+  backgroundImageUrl: string;
+  onCTAClick: () => void;
+}
 
-const HeroContent = styled.div`
-  max-width: 800px;
-  padding: 0 20px;
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-`;
-
-const HeroSubtitle = styled.p`
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-`;
-
-const HeroButton = styled.a`
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: #ff6b6b;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #ee5253;
-  }
-`;
-
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, backgroundImageUrl, onCTAClick }) => {
   return (
-    <HeroSectionWrapper>
-      <HeroContent>
-        <HeroTitle>Welcome to Our Website</HeroTitle>
-        <HeroSubtitle>Discover amazing content and connect with others.</HeroSubtitle>
-        <HeroButton href="#get-started">Get Started</HeroButton>
-      </HeroContent>
-    </HeroSectionWrapper>
+    <section
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        padding: '60px 20px',
+        color: '#fff',
+        textAlign: 'center',
+      }}
+      aria-labelledby="hero-title"
+    >
+      <div
+        style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          padding: '20px',
+          borderRadius: '8px',
+        }}
+      >
+        <h1 id="hero-title" style={{ fontSize: '2.5em', margin: '0 0 10px' }}>{title}</h1>
+        <p style={{ fontSize: '1.25em', margin: '0 0 20px' }}>{subtitle}</p>
+        <button
+          onClick={onCTAClick}
+          style={{
+            padding: '10px 20px',
+            fontSize: '1em',
+            color: '#fff',
+            backgroundColor: '#007BFF',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+          aria-label="Call to Action"
+        >
+          Get Started
+        </button>
+      </div>
+    </section>
   );
 };
 

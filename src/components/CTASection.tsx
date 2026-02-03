@@ -1,62 +1,54 @@
 import React from 'react';
-import './CTASection.css';
+import styled from 'styled-components';
 
-interface CTASectionProps {
-  title: string;
-  description: string;
-  buttonText: string;
-  onButtonClick: () => void;
-}
+// Styled Components
+const CTAContainer = styled.section`
+  padding: 4em;
+  background: #f4f4f9;
+  text-align: center;
+`;
 
-const CTASection: React.FC<CTASectionProps> = ({ title, description, buttonText, onButtonClick }) => {
+const CTAButton = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.75em 1.5em;
+  border: 2px solid #4a90e2;
+  background: #4a90e2;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #357ab8;
+  }
+`;
+
+const CTATitle = styled.h2`
+  font-size: 2em;
+  margin-bottom: 0.5em;
+`;
+
+const CTADescription = styled.p`
+  font-size: 1.25em;
+  color: #666;
+`;
+
+// Component
+const CTASection: React.FC = () => {
+  const handleCTAClick = () => {
+    alert('CTA Button Clicked!');
+  };
+
   return (
-    <section className="cta-section">
-      <div className="cta-content">
-        <h1 className="cta-title">{title}</h1>
-        <p className="cta-description">{description}</p>
-        <button className="cta-button" onClick={onButtonClick}>
-          {buttonText}
-        </button>
-      </div>
-    </section>
+    <CTAContainer>
+      <CTATitle>Join Us Today</CTATitle>
+      <CTADescription>
+        Become a part of our amazing community and start enjoying the benefits.
+      </CTADescription>
+      <CTAButton onClick={handleCTAClick}>Get Started</CTAButton>
+    </CTAContainer>
   );
 };
 
 export default CTASection;
-
-/* CTASection.css */
-.cta-section {
-  padding: 2rem;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-.cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.cta-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta-description {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #0056b3;
-}
