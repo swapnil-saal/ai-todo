@@ -1,24 +1,54 @@
 {
-  "filesToCreate": [
-    {
-      "path": "src/pages/LandingPage.tsx",
-      "content": "import React from 'react';\nimport HeroSection from '../components/HeroSection';\nimport FeaturesSection from '../components/FeaturesSection';\nimport CTASection from '../components/CTASection';\nimport styles from '../styles/landingPage.module.css';\n\nconst LandingPage: React.FC = () => {\n  return (\n    <div className={styles.landingPage}>\n      <HeroSection />\n      <FeaturesSection />\n      <CTASection />\n    </div>\n  );\n};\n\nexport default LandingPage;"
-    },
-    {
-      "path": "src/components/HeroSection.tsx",
-      "content": "import React from 'react';\nimport styles from '../styles/landingPage.module.css';\n\nconst HeroSection: React.FC = () => {\n  return (\n    <section className={styles.heroSection}>\n      <h1>Welcome to Our Product</h1>\n      <p>Discover the features and benefits of using our solution.</p>\n    </section>\n  );\n};\n\nexport default HeroSection;"
-    },
-    {
-      "path": "src/components/FeaturesSection.tsx",
-      "content": "import React from 'react';\nimport styles from '../styles/landingPage.module.css';\n\nconst FeaturesSection: React.FC = () => {\n  return (\n    <section className={styles.featuresSection}>\n      <h2>Features</h2>\n      <ul>\n        <li>Feature 1</li>\n        <li>Feature 2</li>\n        <li>Feature 3</li>\n      </ul>\n    </section>\n  );\n};\n\nexport default FeaturesSection;"
-    },
-    {
-      "path": "src/components/CTASection.tsx",
-      "content": "import React from 'react';\nimport styles from '../styles/landingPage.module.css';\n\nconst CTASection: React.FC = () => {\n  return (\n    <section className={styles.ctaSection}>\n      <h2>Get Started Today!</h2>\n      <button>Sign Up</button>\n    </section>\n  );\n};\n\nexport default CTASection;"
-    },
-    {
-      "path": "src/styles/landingPage.module.css",
-      "content": ".landingPage {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 20px;\n}\n\n.heroSection {\n  background-color: #f5f5f5;\n  padding: 50px;\n  text-align: center;\n}\n\n.featuresSection {\n  margin: 30px 0;\n  padding: 20px;\n  background-color: #ffffff;\n}\n\n.ctaSection {\n  background-color: #007bff;\n  color: #ffffff;\n  padding: 30px;\n  text-align: center;\n}\n\n.ctaSection button {\n  background-color: #0056b3;\n  color: #ffffff;\n  border: none;\n  padding: 10px 20px;\n  cursor: pointer;\n  font-size: 16px;\n}"
-    }
-  ]
+  ".heroSection": {
+    "backgroundColor": "#f5f5f5",
+    "padding": "50px 20px",
+    "textAlign": "center"
+  },
+  ".heroSection h1": {
+    "fontSize": "3em",
+    "marginBottom": "20px"
+  },
+  ".heroSection p": {
+    "fontSize": "1.2em",
+    "marginBottom": "30px"
+  },
+  ".featuresSection": {
+    "backgroundColor": "#ffffff",
+    "padding": "50px 20px",
+    "display": "flex",
+    "justifyContent": "space-around"
+  },
+  ".feature": {
+    "flex": "1",
+    "margin": "0 10px",
+    "textAlign": "center"
+  },
+  ".feature h2": {
+    "fontSize": "2em",
+    "marginBottom": "10px"
+  },
+  ".feature p": {
+    "fontSize": "1em"
+  },
+  ".ctaSection": {
+    "backgroundColor": "#333333",
+    "color": "#ffffff",
+    "padding": "50px 20px",
+    "textAlign": "center"
+  },
+  ".ctaSection h2": {
+    "fontSize": "2.5em",
+    "marginBottom": "20px"
+  },
+  ".ctaSection button": {
+    "backgroundColor": "#ff6600",
+    "color": "#ffffff",
+    "border": "none",
+    "padding": "15px 30px",
+    "fontSize": "1em",
+    "cursor": "pointer"
+  },
+  ".ctaSection button:hover": {
+    "backgroundColor": "#e65c00"
+  }
 }

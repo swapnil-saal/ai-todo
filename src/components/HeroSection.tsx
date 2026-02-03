@@ -1,53 +1,60 @@
 import React from 'react';
+import styled from 'styled-components';
 
-interface HeroSectionProps {
-  title: string;
-  subtitle: string;
-  backgroundImageUrl: string;
-  onCTAClick: () => void;
-}
+// Styled components
+const HeroContainer = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+`;
 
-const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, backgroundImageUrl, onCTAClick }) => {
+const HeroContent = styled.div`
+  text-align: center;
+`;
+
+const HeroTitle = styled.h1`
+  font-size: 2.5rem;
+  color: #343a40;
+`;
+
+const HeroSubtitle = styled.p`
+  font-size: 1.25rem;
+  color: #6c757d;
+  margin-top: 10px;
+`;
+
+const HeroButton = styled.button`
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+// HeroSection Component
+const HeroSection: React.FC = () => {
+  const handleButtonClick = () => {
+    console.log('Hero button clicked');
+  };
+
   return (
-    <section
-      style={{
-        backgroundImage: `url(${backgroundImageUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        padding: '60px 20px',
-        color: '#fff',
-        textAlign: 'center',
-      }}
-      aria-labelledby="hero-title"
-    >
-      <div
-        style={{
-          maxWidth: '800px',
-          margin: '0 auto',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          padding: '20px',
-          borderRadius: '8px',
-        }}
-      >
-        <h1 id="hero-title" style={{ fontSize: '2.5em', margin: '0 0 10px' }}>{title}</h1>
-        <p style={{ fontSize: '1.25em', margin: '0 0 20px' }}>{subtitle}</p>
-        <button
-          onClick={onCTAClick}
-          style={{
-            padding: '10px 20px',
-            fontSize: '1em',
-            color: '#fff',
-            backgroundColor: '#007BFF',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-          aria-label="Call to Action"
-        >
-          Get Started
-        </button>
-      </div>
-    </section>
+    <HeroContainer>
+      <HeroContent>
+        <HeroTitle>Welcome to Our Website</HeroTitle>
+        <HeroSubtitle>Discover our amazing features and services.</HeroSubtitle>
+        <HeroButton onClick={handleButtonClick}>Get Started</HeroButton>
+      </HeroContent>
+    </HeroContainer>
   );
 };
 

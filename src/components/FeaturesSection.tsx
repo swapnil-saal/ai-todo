@@ -1,37 +1,25 @@
 import React from 'react';
 
-type Feature = {
+interface Feature {
   title: string;
   description: string;
   icon: React.ReactNode;
-};
+}
 
-const features: Feature[] = [
-  {
-    title: 'Feature One',
-    description: 'Description for feature one.',
-    icon: <i className="feature-icon icon-one" />,
-  },
-  {
-    title: 'Feature Two',
-    description: 'Description for feature two.',
-    icon: <i className="feature-icon icon-two" />,
-  },
-  {
-    title: 'Feature Three',
-    description: 'Description for feature three.',
-    icon: <i className="feature-icon icon-three" />,
-  },
-];
+interface FeaturesSectionProps {
+  features: Feature[];
+}
 
-const FeaturesSection: React.FC = () => {
+const FeaturesSection: React.FC<FeaturesSectionProps> = ({ features }) => {
   return (
-    <section aria-labelledby="features-heading" className="features-section">
-      <h2 id="features-heading" className="features-title">Our Features</h2>
+    <section aria-labelledby="features-heading">
+      <h2 id="features-heading" className="sr-only">Features</h2>
       <div className="features-grid">
         {features.map((feature, index) => (
-          <div key={index} className="feature-item" role="listitem">
-            <div className="feature-icon-wrapper">{feature.icon}</div>
+          <div key={index} className="feature-card" aria-label={`Feature ${index + 1}`}>
+            <div className="feature-icon" aria-hidden="true">
+              {feature.icon}
+            </div>
             <h3 className="feature-title">{feature.title}</h3>
             <p className="feature-description">{feature.description}</p>
           </div>
